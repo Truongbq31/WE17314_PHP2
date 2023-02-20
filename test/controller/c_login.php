@@ -22,5 +22,5 @@ function check_login(){
         }
     }
 
-    include_once "view/login/v_login.php";
+    include_once "views/login/v_login.php";
 }

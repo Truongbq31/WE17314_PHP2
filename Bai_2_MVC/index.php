@@ -13,7 +13,7 @@ switch ($url){
         break;
 
     case "removeProduct":
-        //Điều hướng về controller xóa
+        //Điều hướng về controllers xóa
         require_once "controller/productController.php";
         echo removeProduct();
         break;

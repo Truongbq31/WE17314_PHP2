@@ -51,45 +51,63 @@ class sinhVien extends conNguoi{
     public $diemLy;
     public $diemHoa;
 
-    public function setDiemToan($diemToan){
-        $this->diemToan = $diemToan;
-    }
-    public function setDiemLy($diemLy){
-        $this->diemLy = $diemLy;
-    }
-    public function setDiemHoa($diemHoa){
-        $this->diemHoa = $diemHoa;
-    }
+  public function __construct($hoTen, $namSinh, $diaChi, $sdt, $email, $diemToan, $diemHoa, $diemLy)
+  {
+      parent::__construct($hoTen, $namSinh, $diaChi, $sdt, $email);
+      $this->diemToan = $diemToan;
+      $this->diemLy = $diemLy;
+      $this->diemHoa = $diemHoa;
+  }
+
+//    public function setDiemToan($diemToan){
+//        $this->diemToan = $diemToan;
+//    }
+//    public function setDiemLy($diemLy){
+//        $this->diemLy = $diemLy;
+//    }
+//    public function setDiemHoa($diemHoa){
+//        $this->diemHoa = $diemHoa;
+//    }
+
     public function tinhDTB(){
         return ($this->diemToan + $this->diemLy + $this->diemHoa) / 3;
     }
     public function hienThiTTSV(){
-        return "Họ tên: " .$this->hoTen ."</br>" ."SĐT: " .$this->sdt ."</br>" ."Tuổi: " .$this->tinhTuoi() ."</br>" ."Điểm trung bình: " .$this->tinhDTB();
+        return "Họ tên: " .$this->hoTen ."</br>" ."SĐT: " .$this->sdt ."<br>" ."Email: " .$this->email ."</br>" ."Tuổi: " .$this->tinhTuoi() ."</br>" ."Điểm trung bình: " .$this->tinhDTB();
     }
 }
 
 class giangVien extends conNguoi{
     public $luongCB;
     public $soGioDay;
+    public function __construct($hoTen, $namSinh, $diaChi, $sdt, $email, $luongCB, $soGioDay)
+    {
+        parent::__construct($hoTen, $namSinh, $diaChi, $sdt, $email);
+        $this->luongCB = $luongCB;
+        $this->soGioDay = $soGioDay;
+    }
+
+//    public function setLuongCB($luongCB){
+//        $this->luongCB = $luongCB;
+//    }
+//    public function setSoGioDay($soGioDay){
+//        $this->soGioDay = $soGioDay;
+//    }
 
     public function tinhluong(){
         return $this->luongCB * $this->soGioDay;
     }
-    public function setLuongCB($luongCB){
-        $this->luongCB = $luongCB;
-    }
-    public function setSoGioDay($soGioDay){
-        $this->soGioDay = $soGioDay;
-    }
+
     public function hienThiTTGV(){
-        return "Họ tên: " .$this->hoTen ."</br>" ."SĐT: " .$this->sdt ."</br>" ."Tổng lương: " .number_format($this->tinhluong()) ." VNĐ";
+        return "Họ tên: " .$this->hoTen ."</br>" ."SĐT: " .$this->sdt ."<br>" ."Email: " .$this->email ."</br>" ."Tổng lương: " .number_format($this->tinhluong()) ." VNĐ";
     }
 }
 
-$sv = new sinhVien("Trường", 2003, "HN", "0384714104", "truongbq31@email.com");
-$sv->setDiemToan(8);
-$sv->setDiemLy(7);
-$sv->setDiemHoa(8);
+//Khi khởi tạo đối tượng sẽ auto gọi hàm construct (nếu có)
+$sv = new sinhVien("Trường", 2003, "HN", "0384714104", "truongbq31@gamil.com", 7,8,9);
+//$sv->setDiemToan(8);
+//$sv->setDiemLy(7);
+//$sv->setDiemHoa(8);
 echo "Thông tin sinh viên" ."</br>";
 echo $sv->hienThiTTSV();
 
@@ -97,7 +115,7 @@ echo "<br>";
 echo "<br>";
 
 echo "Thông tin giảng viên" ."</br>";
-$gv = new giangVien("HQT", 1996, "HN", "0382626621", "thanghq12@gmail.com");
-$gv->setLuongCB(9000000);
-$gv->setSoGioDay(12);
+$gv = new giangVien("HQT", 1996, "HN", "0382626621", "thanghq12@gmail.com", 9000000, 12);
+//$gv->setLuongCB(9000000);
+//$gv->setSoGioDay(12);
 echo $gv->hienThiTTGV();

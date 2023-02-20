@@ -1,0 +1,8 @@
+-Chủ đề tự do
+-Yêu cầu xây dựng ít nhất 5 module quản lý (ko cần trang người dùng)
+
+++Giai đoạn 1:
+    -Ko chấm giao diện
+    -Chấm 1 module
+    -Sử dụng mô hình MVC
+    -Áp dụng tính thừa kế
