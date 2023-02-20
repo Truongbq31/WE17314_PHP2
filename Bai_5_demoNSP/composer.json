@@ -1,0 +1,21 @@
+{
+    "name": "ytbsa/bai_5_demo-nsp",
+    "autoload": {
+        "psr-4": {
+            "Ytbsa\\Bai5DemoNsp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "truongbq31",
+            "email": "ytbsadboy@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "./"
+        }
+    },
+
+    "require": {}
+}
